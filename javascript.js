@@ -1,19 +1,14 @@
-// Return a random integer between 0 and 2
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
 // Return the computer choice
 function getComputerChoice() {
-    let number = getRandomInt(3);
+    let number = Math.floor(Math.random() * 3);
     let choice;
 
     if (number === 0) {
-        choice = "Rock";
+        choice = "rock";
     } else if (number === 1) {
-        choice = "Paper";
+        choice = "paper";
     } else {
-        choice = "Scissors";
+        choice = "scissors";
     }
 
     return choice;
@@ -26,7 +21,7 @@ function getHumanChoice() {
     if (choice.toLowerCase() != "rock" && choice.toLowerCase() != "paper" && choice.toLowerCase() != "scissors" )
         alert("Invalid choice!")
     
-    return choice;
+    return choice.toLowerCase();
 }
 
 // Run the game
@@ -36,17 +31,19 @@ function playGame() {
 
     //Give the result of a round
     function playRound(computerChoice, humanChoice) {
+        let winner;
+
         if(computerChoice == humanChoice) {
-            console.log("It's a tie!");
-        } else if ((computerChoice == "Rock" && humanChoice == "Scissors") || (computerChoice == "Paper" && humanChoice == "Rock") || (computerChoice == "Scissors" && humanChoice == "Paper")) {
-            console.log("Computer wins! " + computerChoice + " beats " + humanChoice);
+            result = "It's a tie!"
+        } else if ((computerChoice == "rock" && humanChoice == "scissors") || (computerChoice == "paper" && humanChoice == "rock") || (computerChoice == "scissors" && humanChoice == "paper")) {
+            result = "Computer wins! " + computerChoice + " beats " + humanChoice;
             computerScore = computerScore + 1;
-            console.log("Computer's score: " + computerScore);
         } else {
-            console.log("You win! " + humanChoice + " beats " + computerChoice);
+            result = "You win! " + humanChoice + " beats " + computerChoice;
             humanScore = humanScore + 1;
-            console.log("Your score: " + humanScore);
         }
+        console.log("Computer's score : " + computerScore + " | Your score : " + humanScore);
+        return result;
     } 
 
     //Run 5 rounds
@@ -60,11 +57,17 @@ function playGame() {
     }
 
     //Give the winner of the game
+    let winner;
+
     if (humanScore > computerScore) {
-        console.log("Congratulations! You won!");
+        winner = "Congratulations! You won!";
+    } else if (computerScore > humanScore) {
+        winner = "Computer won! You'll do better next time!";
     } else {
-        console.log("Computer won! You'll do better next time!");
+        winner = "No winner! It's a draw";
     }
+
+    return winner;
 
 }
 
