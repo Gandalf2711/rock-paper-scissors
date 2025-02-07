@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <div class="container">
+        <div class="header">
+            <h1>Rock Paper Scissors</h1>
+            <button class="btn-reset" id="reset">Reset the game</button>
+        </div>
+        <p class="rules">Click one of the below buttons to start the game. The first one to win five rounds wins the game!</p>
+        <div class="btn-container">
+            <button class="btn" id="rock">Rock</button>
+            <button class="btn" id="paper">Paper</button>
+            <button class="btn" id="scissors">Scissors</button>
+        </div>
 
-    <div id="choice"></div>
-    <div id="res"></div>
-    <div id="score"></div>
-    <div id="winner"></div>
-
-    <button id="reset">Reset</button>
+        <div class="text-container">
+            <div class="text" id="choice"></div>
+            <div class="text" id="res"></div>
+            <div class="text" id="score"></div>
+            <div class="text" id="winner"></div>
+        </div>
+    </div>
 
     <script src="javascript.js"></script>
 </body>

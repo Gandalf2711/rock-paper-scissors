@@ -21,10 +21,10 @@ function playRound(computerChoice, humanChoice) {
     if(computerChoice == humanChoice) {
         result = "It's a tie!"
     } else if ((computerChoice == "rock" && humanChoice == "scissors") || (computerChoice == "paper" && humanChoice == "rock") || (computerChoice == "scissors" && humanChoice == "paper")) {
-        result = "Computer wins! " + computerChoice + " beats " + humanChoice;
+        result = "Computer wins, " + computerChoice + " beats " + humanChoice + "!";
         computerScore = computerScore + 1;
     } else {
-        result = "You win! " + humanChoice + " beats " + computerChoice;
+        result = "You win, " + humanChoice + " beats " + computerChoice + "!";
         humanScore = humanScore + 1;
     }
     choice.textContent = "Computer's choice : " + computerChoice + " | Your choice : " + humanChoice;
